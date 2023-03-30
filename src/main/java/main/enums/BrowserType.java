@@ -1,4 +1,4 @@
-package config.enums;
+package main.enums;
 
 public enum BrowserType {
 

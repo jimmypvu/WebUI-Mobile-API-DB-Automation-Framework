@@ -1,7 +1,9 @@
-package config;
+package main.config;
 
-import config.converters.StringToBrowserTypeConverter;
-import config.enums.BrowserType;
+import main.config.converters.StringToBrowserTypeConverter;
+import main.enums.BrowserRemoteModeType;
+import main.enums.BrowserType;
+import main.enums.BrowserRunModeType;
 import org.aeonbits.owner.Config;
 
 @Config.LoadPolicy(Config.LoadType.MERGE)
@@ -14,4 +16,10 @@ public interface FrameworkConfig extends Config {
     @DefaultValue("CHROME")
     @ConverterClass(StringToBrowserTypeConverter.class)
     BrowserType browser();
+
+    @Key("browserRunMode")
+    BrowserRunModeType browserRunMode();
+
+    @Key("browserRemoteMode")
+    BrowserRemoteModeType browserRemoteMode();
 }
